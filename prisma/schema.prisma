@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Aluno {
+  matricula String @id @unique
+  nome String
+  nascimento String
+  curso String
+  @@map("alunos")
+}
+
+model Professor {
+  id String @id @unique
+  nome String
+  disciplinas String
+  @@map("professores")
+}
+
+model Disciplina {
+  id String @id
+  nome String
+  curso String
+  @@map("disciplinas")
+}
+
+model Curso{
+  id String @id @unique
+  nome String
+  @@map("cursos")
+}
+
+model Nota {
+  id Int @id @default(autoincrement())
+  nota Decimal
+  descricao String
+  @@map("notas")
+}
