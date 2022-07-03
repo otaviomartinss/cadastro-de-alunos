@@ -47,23 +47,23 @@ export class UniversidadeService {
         })
     }
 
-    // async delete(id: string){
-    //     const bookExists = await this.prisma.book.findUnique({
-    //         where: {
-    //             id,
-    //         }
-    //     });
+    async delete(matricula: string){
+        const alunoExists = await this.prisma.aluno.findUnique({
+            where: {
+                matricula,
+            }
+        });
 
-    //     if (!bookExists){
-    //         throw new Error("Book does not exists")
-    //     }
+        if (!alunoExists){
+            throw new Error("Aluno não existe")
+        }
 
-    //     return await this.prisma.book.delete({
-    //         where: {
-    //             id,
-    //         } 
-    //     })
-    // }
+        return await this.prisma.aluno.delete({
+            where: {
+                matricula,
+            } 
+        })
+    }
 
 
 

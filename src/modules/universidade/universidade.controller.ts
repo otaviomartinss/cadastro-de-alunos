@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { UniversidadeService } from './universidade.service';
 import { AlunoDTO, ProfessorDTO, DisciplinaDTO, CursoDTO, NotaDTO } from "./universidade.dto"
 
@@ -19,5 +19,10 @@ export class UniversidadeController {
   @Put(":matricula")
   async update(@Param("matricula") matricula: string, @Body() data: AlunoDTO){
     return this.universidadeService.update(matricula, data)
+  }
+
+  @Delete(":matricula")
+  async delete(@Param("matricula") matricula: string){
+    return this.universidadeService.delete(matricula)
   }
 }
