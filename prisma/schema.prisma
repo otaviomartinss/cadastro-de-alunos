@@ -58,7 +58,7 @@ model Curso{
 }
 
 model Nota {
-  id Int @id @default(autoincrement())
+  id String @id @default(uuid())
   nota Decimal
   descricao String
   aluno Aluno @relation(fields: [alunoId], references: [matricula])
