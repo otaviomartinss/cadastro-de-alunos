@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
-import { UniversidadeService } from './universidade.service';
-import { UniversidadeController } from './universidade.controller';
+import { AlunoService } from './aluno.service';
+import { AlunoController } from './aluno.controller';
 import { PrismaService } from 'src/database/PrismaService';
 
 
 @Module({
-  controllers: [UniversidadeController],
-  providers: [UniversidadeService, PrismaService]
+  controllers: [AlunoController],
+  providers: [AlunoService, PrismaService]
 })
 export class UniversidadeModule {}

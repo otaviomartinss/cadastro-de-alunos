@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/database/PrismaService';
-import { AlunoDTO, ProfessorDTO, DisciplinaDTO, CursoDTO, NotaDTO } from "./universidade.dto"
+import { AlunoDTO } from "./universidade.dto"
 
 @Injectable()
-export class UniversidadeService {
+export class AlunoService {
     constructor(private prisma: PrismaService){}
 
     async create(data: AlunoDTO){
