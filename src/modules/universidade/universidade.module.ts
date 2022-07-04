@@ -6,10 +6,12 @@ import { ProfessorController } from './professor.controller';
 import { ProfessorService } from './professor.service';
 import { CursoController } from './curso.controller';
 import { CursoService } from './curso.service';
+import { DisciplinaController } from './disciplina.controller';
+import { DisciplinaService } from './disciplina.service';
 
 
 @Module({
-  controllers: [AlunoController, ProfessorController, CursoController],
-  providers: [AlunoService, ProfessorService, CursoService, PrismaService]
+  controllers: [AlunoController, ProfessorController, CursoController, DisciplinaController],
+  providers: [AlunoService, ProfessorService, CursoService, DisciplinaService, PrismaService]
 })
 export class UniversidadeModule {}

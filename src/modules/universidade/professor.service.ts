@@ -36,7 +36,7 @@ export class ProfessorService {
         });
 
         if (!professorExists){
-            throw new Error("Professor não existe")
+            throw new Error("O professor não existe")
         }
 
         return await this.prisma.professor.update({
@@ -55,7 +55,7 @@ export class ProfessorService {
         });
 
         if (!professorExists){
-            throw new Error("Professor não existe")
+            throw new Error("O professor não existe")
         }
 
         return await this.prisma.professor.delete({

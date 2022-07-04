@@ -36,7 +36,7 @@ export class CursoService {
         });
 
         if (!cursoExists){
-            throw new Error("Curso não existe")
+            throw new Error("O curso não existe")
         }
 
         return await this.prisma.curso.update({
@@ -55,7 +55,7 @@ export class CursoService {
         });
 
         if (!cursoExists){
-            throw new Error("Curso não existe")
+            throw new Error("O curso não existe")
         }
 
         return await this.prisma.curso.delete({

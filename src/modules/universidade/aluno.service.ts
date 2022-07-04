@@ -36,7 +36,7 @@ export class AlunoService {
         });
 
         if (!alunoExists){
-            throw new Error("Aluno não existe")
+            throw new Error("O aluno não existe")
         }
 
         return await this.prisma.aluno.update({
@@ -55,7 +55,7 @@ export class AlunoService {
         });
 
         if (!alunoExists){
-            throw new Error("Aluno não existe")
+            throw new Error("O aluno não existe")
         }
 
         return await this.prisma.aluno.delete({
