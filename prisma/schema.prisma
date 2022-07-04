@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgres"
   url      = env("DATABASE_URL")
 }
 
@@ -11,15 +11,14 @@ model Aluno {
   matricula String @id @unique
   nome String
   nascimento String
-  curso Curso @relation(fields: [cursoId], references: [id])
-  cursoId Int
+  curso String
   @@map("alunos")
 }
 
 model Professor {
   id String @id @unique
   nome String
-  disciplinas String
+  disciplinas DisciplinasOnProfessores[]
   @@map("professores")
 }
 
@@ -27,17 +26,21 @@ model Disciplina {
   id String @id
   nome String
   curso String
+  professores DisciplinasOnProfessores[]
   @@map("disciplinas")
 }
 
-model DisciplinasOnAlunos {
-  
+model DisciplinasOnProfessores {
+  professor Professor @relation(fields: [professorId], references: [id])
+  professorId String
+  disciplina Disciplina @relation(fields: [disciplinaId], references: [id])
+  disciplinaId String
+  @@id([professorId, disciplinaId])
 }
 
 model Curso{
   id String @id @unique
   nome String
-  alunos Aluno[]
   @@map("cursos")
 }
 
