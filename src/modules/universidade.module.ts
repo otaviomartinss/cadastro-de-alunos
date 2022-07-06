@@ -1,17 +1,19 @@
 import { Module } from '@nestjs/common';
-import { AlunoService } from './aluno/aluno.service';
-import { AlunoController } from './aluno/aluno.controller';
+import { AlunoService } from './aluno.service';
+import { AlunoController } from './aluno.controller';
 import { PrismaService } from 'src/database/PrismaService';
-import { ProfessorController } from './professor/professor.controller';
-import { ProfessorService } from './professor/professor.service';
-import { CursoController } from './curso/curso.controller';
-import { CursoService } from './curso/curso.service';
-import { DisciplinaController } from './disciplina/disciplina.controller';
-import { DisciplinaService } from './disciplina/disciplina.service';
+import { ProfessorController } from './professor.controller';
+import { ProfessorService } from './professor.service';
+import { CursoController } from './curso.controller';
+import { CursoService } from './curso.service';
+import { DisciplinaController } from './disciplina.controller';
+import { DisciplinaService } from './disciplina.service';
+import { NotaController } from './nota.controller';
+import { NotaService } from './nota.service';
 
 
 @Module({
-  controllers: [AlunoController, ProfessorController, CursoController, DisciplinaController],
-  providers: [AlunoService, ProfessorService, CursoService, DisciplinaService, PrismaService]
+  controllers: [AlunoController, ProfessorController, CursoController, DisciplinaController, NotaController],
+  providers: [AlunoService, ProfessorService, CursoService, DisciplinaService, NotaService, PrismaService]
 })
 export class UniversidadeModule {}

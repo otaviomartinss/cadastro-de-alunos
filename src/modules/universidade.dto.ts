@@ -2,7 +2,7 @@ export type AlunoDTO = {
     matricula: string;
     nome: string;
     nascimento: string;
-    curso: string;
+    cursoId: string;
 }
 
 export type ProfessorDTO = {

@@ -16,10 +16,10 @@ export class AlunoController {
     return this.alunoService.findAll();
   }
 
-  @Put(":matricula")
-  async update(@Param("matricula") matricula: string, @Body() data: AlunoDTO){
-    return this.alunoService.update(matricula, data)
-  }
+  // @Put(":matricula")
+  // async update(@Param("matricula") matricula: string, @Body() data: AlunoDTO){
+  //   return this.alunoService.update(matricula, data)
+  // }
 
   @Delete(":matricula")
   async delete(@Param("matricula") matricula: string){
