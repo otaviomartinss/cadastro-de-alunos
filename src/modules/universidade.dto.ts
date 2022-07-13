@@ -13,6 +13,7 @@ export type ProfessorDTO = {
 export type DisciplinaDTO = {
     id: string;
     nome: string;
+    curso: string
 }
 
 export type CursoDTO = {

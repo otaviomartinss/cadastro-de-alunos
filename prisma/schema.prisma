@@ -8,7 +8,7 @@ datasource db {
 }
 
 model Aluno {
-  matricula String @id @unique
+  matricula String @id
   nome String
   nascimento String
   curso Curso @relation(fields: [cursoId], references: [id])
@@ -18,7 +18,7 @@ model Aluno {
 }
 
 model Professor {
-  id String @id @unique
+  id String @id
   nome String
   disciplinas DisciplinasOnProfessores[]
   @@map("professores")

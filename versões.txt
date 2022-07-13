@@ -42,3 +42,7 @@ Atualização nos services e controlers
 Criação do arquivo de versionamento
 ***Bug encontrado na criação de aluno
 
+v0.1.4
+Atualização schema.prisma
+Atualização DTO
+Criação Module e Controller DisciplinaOnCurso
