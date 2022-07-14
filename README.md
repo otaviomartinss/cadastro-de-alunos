@@ -61,9 +61,9 @@ Atualização Module e Controller DisciplinaOnCurso
 v0.1.6
 Relation curso disciplina
 Versões no README.md
+GET disciplinas cursos
 
 v0.1.7
-GET disciplinas cursos
 
 v0.1.8
 
