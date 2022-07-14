@@ -1,67 +1,58 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/database/PrismaService';
-import { DisciplinaDTO } from "./universidade.dto"
+import { DisciplinaOnCursoDTO } from "./universidade.dto"
 
 @Injectable()
-export class DisciplinaService {
+export class DisciplinaOnCursoService {
     constructor(private prisma: PrismaService){}
 
-    async create(data: DisciplinaDTO){
-        const disciplinaExists = await this.prisma.disciplina.findFirst({
-            where: {
-                id: data.id,
-            },
-        });
-
-        if(disciplinaExists){
-            throw new Error("A disciplina já existe")
-        }
-        const disciplina = await this.prisma.disciplina.create({
-            data,
+    async create(data: DisciplinaOnCursoDTO){
+        const disciplinaOnCurso = await this.prisma.disciplinasOnCursos.create({
+            data
         })
-        return disciplina
+        return disciplinaOnCurso
     }
 
 
 
-    async findAll() {
-        return this.prisma.disciplina.findMany();
-    }
+    // async findAll() {
+    //     return this.prisma.disciplina.findMany();
+    // }
 
-    async update(id: string, data: DisciplinaDTO){
-        const disciplinaExists = await this.prisma.disciplina.findUnique({
-            where: {
-                id,
-            }
-        });
+    // async update(id: string, data: DisciplinaDTO){
+    //     const disciplinaExists = await this.prisma.disciplina.findUnique({
+    //         where: {
+    //             id,
+    //         }
+    //     });
 
-        if (!disciplinaExists){
-            throw new Error("A disciplina não existe")
-        }
+    //     if (!disciplinaExists){
+    //         throw new Error("A disciplina não existe")
+    //     }
 
-        return await this.prisma.disciplina.update({
-            data,
-            where: {
-                id,
-            } 
-        })
-    }
+    //     return await this.prisma.disciplina.update({
+    //         data,
+    //         where: {
+    //             id,
+    //         } 
+    //     })
+    // }
 
-    async delete(id: string){
-        const disciplinaExists = await this.prisma.disciplina.findUnique({
-            where: {
-                id,
-            }
-        });
+    // async delete(id: string){
+    //     const disciplinaExists = await this.prisma.disciplina.findUnique({
+    //         where: {
+    //             id,
+    //         }
+    //     });
 
-        if (!disciplinaExists){
-            throw new Error("A disciplina não existe")
-        }
+    //     if (!disciplinaExists){
+    //         throw new Error("A disciplina não existe")
+    //     }
 
-        return await this.prisma.disciplina.delete({
-            where: {
-                id,
-            } 
-        })
-    }
+    //     return await this.prisma.disciplina.delete({
+    //         where: {
+    //             id,
+    //         } 
+    //     })
+    // }
 }

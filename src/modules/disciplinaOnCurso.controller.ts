@@ -1,28 +1,28 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
-import { DisciplinaService } from './disciplina.service';
-import { DisciplinaDTO } from "./universidade.dto"
+import { DisciplinaOnCursoService } from './disciplinaOnCurso.service';
+import { DisciplinaOnCursoDTO } from "./universidade.dto"
 
-@Controller('disciplina')
-export class DisciplinaController {
-  constructor(private readonly disciplinaService: DisciplinaService) {}
+@Controller('disciplinaoncurso')
+export class DisciplinaOnCursoController {
+  constructor(private readonly disciplinaOnCursoService: DisciplinaOnCursoService) {}
   
   @Post()
-  async create(@Body() data: DisciplinaDTO) {
-    return this.disciplinaService.create(data);
+  async create(@Body() data: DisciplinaOnCursoDTO) {
+    return this.disciplinaOnCursoService.create(data);
   }
 
-  @Get()
-  async findAll(){
-    return this.disciplinaService.findAll();
-  }
+  // @Get()
+  // async findAll(){
+  //   return this.disciplinaOnCursoService.findAll();
+  // }
 
-  @Put(":id")
-  async update(@Param("id") id: string, @Body() data: DisciplinaDTO){
-    return this.disciplinaService.update(id, data)
-  }
+  // @Put(":id")
+  // async update(@Param("id") id: string, @Body() data: DisciplinaOnCursoDTO){
+  //   return this.disciplinaOnCursoService.update(id, data)
+  // }
 
-  @Delete(":id")
-  async delete(@Param("id") id: string){
-    return this.disciplinaService.delete(id)
-  }
+  // @Delete(":id")
+  // async delete(@Param("id") id: string){
+  //   return this.disciplinaOnCursoService.delete(id)
+  // }
 }

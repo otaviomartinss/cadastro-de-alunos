@@ -8,63 +8,65 @@ datasource db {
 }
 
 model Aluno {
-  matricula String @id
-  nome String
-  nascimento String
-  curso Curso @relation(fields: [cursoId], references: [id])
-  cursoId String
-  notas Nota[]
+  matricula             String      @id
+  nome                  String
+  nascimento            String
+  curso                 Curso       @relation(fields: [cursoId], references: [id])
+  cursoId               String
+  notas                 Nota[]
   @@map("alunos")
 }
 
 model Professor {
-  id String @id
-  nome String
+  id                    String      @id
+  nome                  String
   disciplinas DisciplinasOnProfessores[]
   @@map("professores")
 }
 
 model Disciplina {
-  id String @id
-  nome String
-  cursos DisciplinasOnCursos[]
-  professores DisciplinasOnProfessores[]
-  notas Nota[]
+  id                    String      @id
+  nome                  String
+  cursos                DisciplinasOnCursos[]
+  professores           DisciplinasOnProfessores[]
+  notas                 Nota[]
   @@map("disciplinas")
 }
 
 model DisciplinasOnProfessores {
-  professor Professor @relation(fields: [professorId], references: [id])
-  professorId String
-  disciplina Disciplina @relation(fields: [disciplinaId], references: [id])
-  disciplinaId String
+  professor             Professor   @relation(fields: [professorId], references: [id])
+  professorId           String
+  disciplina            Disciplina  @relation(fields: [disciplinaId], references: [id])
+  disciplinaId          String
+  @@map("disciplinas_on_professores")
   @@id([professorId, disciplinaId])
 }
 
 model DisciplinasOnCursos {
-  curso Curso @relation(fields: [cursoId], references: [id])
-  cursoId String
-  disciplina Disciplina @relation(fields: [disciplinaId], references: [id])
-  disciplinaId String
+  curso                 Curso       @relation(fields: [cursoId], references: [id])
+  cursoId               String
+  disciplina            Disciplina  @relation(fields: [disciplinaId], references: [id])
+  disciplinaId          String
+  @@map("disciplinas_on_cursos")
   @@id([cursoId, disciplinaId])
 }
 
 model Curso{
-  id String @id @unique
-  nome String
-  disciplinas DisciplinasOnCursos[]
-  alunos Aluno[]
+  id                    String      @id @unique
+  nome                  String
+  disciplinas           DisciplinasOnCursos[]
+  alunos                Aluno[]
   @@map("cursos")
 }
 
 model Nota {
-  id String @id @default(uuid())
-  nota Decimal
-  descricao String
-  aluno Aluno @relation(fields: [alunoId], references: [matricula])
-  alunoId String
-  disciplina Disciplina @relation(fields: [disciplinaId], references: [id])
-  disciplinaId String
+  id                    String      @id @default(uuid())
+  nota                  Decimal
+  descricao             String
+  aluno                 Aluno       @relation(fields: [alunoId], references: [matricula])
+  alunoId               String
+  disciplina            Disciplina  @relation(fields: [disciplinaId], references: [id])
+  disciplinaId          String
   @@map("notas")
 }
 

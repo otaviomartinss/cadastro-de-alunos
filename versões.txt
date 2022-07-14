@@ -46,3 +46,8 @@ v0.1.4
 Atualização schema.prisma
 Atualização DTO
 Criação Module e Controller DisciplinaOnCurso
+
+v0.1.5
+Atualização schema.prisma
+Atualização DTO
+Atualização Module e Controller DisciplinaOnCurso

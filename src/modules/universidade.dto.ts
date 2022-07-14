@@ -29,3 +29,7 @@ export type NotaDTO = {
     disciplina: string;
 }
 
+export type DisciplinaOnCursoDTO = {
+    cursoId: string
+    disciplinaId: string
+}
