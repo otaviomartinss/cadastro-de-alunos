@@ -28,24 +28,24 @@ export class AlunoService {
         return this.prisma.aluno.findMany();
     }
 
-    // async update(matricula: string, data: AlunoDTO){
-    //     const alunoExists = await this.prisma.aluno.findUnique({
-    //         where: {
-    //             matricula,
-    //         }
-    //     });
+    async update(matricula: string, data: AlunoDTO){
+        const alunoExists = await this.prisma.aluno.findUnique({
+            where: {
+                matricula,
+            }
+        });
 
-    //     if (!alunoExists){
-    //         throw new Error("O aluno não existe")
-    //     }
+        if (!alunoExists){
+            throw new Error("O aluno não existe")
+        }
 
-    //     return await this.prisma.aluno.update({
-    //         data,
-    //         where: {
-    //             matricula,
-    //         } 
-    //     })
-    // }
+        return await this.prisma.aluno.update({
+            data,
+            where: {
+                matricula,
+            } 
+        })
+    }
 
     async delete(matricula: string){
         const alunoExists = await this.prisma.aluno.findUnique({

@@ -64,6 +64,8 @@ Versões no README.md
 GET disciplinas cursos
 
 v0.1.7
+Get All em alunos e Get all para alunos em determinada disciplina
+***Bug na criação de aluno resolvido
 
 v0.1.8
 
