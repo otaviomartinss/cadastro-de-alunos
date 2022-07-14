@@ -11,10 +11,10 @@ export class DisciplinaOnCursoController {
     return this.disciplinaOnCursoService.create(data);
   }
 
-  // @Get()
-  // async findAll(){
-  //   return this.disciplinaOnCursoService.findAll();
-  // }
+  @Get(":cursoId")
+  async findMany(@Param("cursoId") cursoId: string){
+    return this.disciplinaOnCursoService.findMany(cursoId);
+  }
 
   // @Put(":id")
   // async update(@Param("id") id: string, @Body() data: DisciplinaOnCursoDTO){

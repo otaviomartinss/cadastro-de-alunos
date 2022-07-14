@@ -13,11 +13,13 @@ export class DisciplinaOnCursoService {
         return disciplinaOnCurso
     }
 
-
-
-    // async findAll() {
-    //     return this.prisma.disciplina.findMany();
-    // }
+    async findMany(cursoId: string) {
+        return this.prisma.disciplinasOnCursos.findMany({
+            where: {
+                cursoId
+            }
+        })
+    }
 
     // async update(id: string, data: DisciplinaDTO){
     //     const disciplinaExists = await this.prisma.disciplina.findUnique({
