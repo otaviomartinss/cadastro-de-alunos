@@ -51,7 +51,7 @@ model DisciplinasOnCursos {
   @@id([cursoId, disciplinaId])
 }
 
-model Curso{
+model Curso {
   id                    String      @id @unique
   nome                  String
   disciplinas           DisciplinasOnCursos[]

@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  api:
+    env_file:
+      - .env
+    build: .
+    command: npm run start:dev
+    volumes:
+      - .:/api
+    ports:
+      - 3000:3000
+

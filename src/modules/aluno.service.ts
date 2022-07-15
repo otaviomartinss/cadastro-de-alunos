@@ -22,8 +22,6 @@ export class AlunoService {
         return aluno
     }
 
-
-
     async findAll() {
         return this.prisma.aluno.findMany();
     }

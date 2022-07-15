@@ -68,6 +68,7 @@ Get All em alunos e Get all para alunos em determinada disciplina
 ***Bug na criação de aluno resolvido
 
 v0.1.8
+Dockerfile
 
 
 v0.1.9
