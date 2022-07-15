@@ -70,9 +70,10 @@ Get All em alunos e Get all para alunos em determinada disciplina
 v0.1.8
 Dockerfile
 
-
 v0.1.9
-
+Dockerfile
+docker-image.yml
+schema.prisma
 
 v0.2.0
 
