@@ -76,6 +76,6 @@ docker-image.yml
 schema.prisma
 
 v0.2.0
-
+docker
 
 v0.2.1
