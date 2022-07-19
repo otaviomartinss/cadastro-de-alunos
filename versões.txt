@@ -1,7 +1,0 @@
-comandos
-
-docker build . -t image-cadastro
-
-docker run -d -p 3000:3000 -t --name cadastro image-cadastro
-
-docker exec -it cadastro /bin/bash
